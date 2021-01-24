@@ -1,4 +1,4 @@
-#Rumos - 2021 - Project I - Java Bank Management System
+# Rumos - 2021 - Project I - Java Bank Management System
 
 The objective of this work is the realization of a Bank Management System using the Java language and OO concepts.
 
