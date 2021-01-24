@@ -239,6 +239,12 @@ public class ATM {
         theUser.addAccountTransaction(fromAccount, -1 * amount, memo);
     }
 
+    /**
+     * Process a fund deposit to an account
+     *
+     * @param theUser the logged-in User object
+     * @param in the Scanner object used for user input
+     */
     public static void depositFunds(User theUser, Scanner in) {
         //initialize
         int toAccount;
@@ -278,6 +284,6 @@ public class ATM {
         memo = in.nextLine();
 
         //do the withdraw
-        theUser.addAccountTransaction(toAccount, -1 * amount, memo);
+        theUser.addAccountTransaction(toAccount, amount, memo);
     }
 }
