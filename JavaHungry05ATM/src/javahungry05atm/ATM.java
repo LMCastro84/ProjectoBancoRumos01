@@ -270,11 +270,8 @@ public class ATM {
             amount = in.nextDouble();
             if (amount < 0) {
                 System.out.println("Amount must be grater than zero.");
-            } else if (amount > accountBal) {
-                System.out.printf("Amount must not be greater than balance\n"
-                        + "balance of %.02f€.\n", accountBal);
             }
-        } while (amount < 0 || amount > accountBal);
+        } while (amount < 0);
 
         //gobble up rest of previous input
         in.nextLine();
