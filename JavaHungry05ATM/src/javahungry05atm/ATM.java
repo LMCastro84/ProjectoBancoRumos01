@@ -99,7 +99,7 @@ public class ATM {
                 break;
             case 3:
                 ATM.depositFunds(theUser, in);
-                creak;
+                break;
             case 4:
                 ATM.transferFunds(theUser, in);
                 break;
@@ -193,8 +193,9 @@ public class ATM {
 
     /**
      * Process a fund withdraw from an account
-     * @param theUser   the logged-in User object
-     * @param in        the Scanner object user for user input
+     *
+     * @param theUser the logged-in User object
+     * @param in the Scanner object user for user input
      */
     public static void withdrawFunds(User theUser, Scanner in) {
         //initialize
@@ -236,5 +237,47 @@ public class ATM {
 
         //do the withdraw
         theUser.addAccountTransaction(fromAccount, -1 * amount, memo);
+    }
+
+    public static void depositFunds(User theUser, Scanner in) {
+        //initialize
+        int toAccount;
+        double amount;
+        double accountBal;
+        String memo;
+
+        //get the account to transfer from
+        do {
+            System.out.printf("Enter the number (1-%d) of the account to transfer\n"
+                    + " from: ");
+            toAccount = in.nextInt() - 1;
+            if (toAccount < 0 || toAccount >= theUser.numAccounts()) {
+                System.out.println("Invalid account. Please try again.");
+            }
+        } while (toAccount < 0 || toAccount >= theUser.numAccounts());
+        accountBal = theUser.getAccountBalance(toAccount);
+
+        //get the amount to transfer
+        do {
+            System.out.printf("Enter the amount to transfer (max %.02f€): ",
+                    accountBal);
+            amount = in.nextDouble();
+            if (amount < 0) {
+                System.out.println("Amount must be grater than zero.");
+            } else if (amount > accountBal) {
+                System.out.printf("Amount must not be greater than balance\n"
+                        + "balance of %.02f€.\n", accountBal);
+            }
+        } while (amount < 0 || amount > accountBal);
+
+        //gobble up rest of previous input
+        in.nextLine();
+
+        //get a memo
+        System.out.println("Enter a memo: ");
+        memo = in.nextLine();
+
+        //do the withdraw
+        theUser.addAccountTransaction(toAccount, -1 * amount, memo);
     }
 }
