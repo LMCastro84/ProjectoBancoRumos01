@@ -191,6 +191,11 @@ public class ATM {
 
     }
 
+    /**
+     * Process a fund withdraw from an account
+     * @param theUser   the logged-in User object
+     * @param in        the Scanner object user for user input
+     */
     public static void withdrawFunds(User theUser, Scanner in) {
         //initialize
         int fromAccount;
@@ -221,5 +226,15 @@ public class ATM {
                         + "balance of %.02f€.\n", accountBal);
             }
         } while (amount < 0 || amount > accountBal);
+
+        //gobble up rest of previous input
+        in.nextLine();
+
+        //get a memo
+        System.out.println("Enter a memo: ");
+        memo = in.nextLine();
+
+        //do the withdraw
+        theUser.addAccountTransaction(fromAccount, -1 * amount, memo);
     }
 }
