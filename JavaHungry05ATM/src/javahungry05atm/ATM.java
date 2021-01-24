@@ -255,7 +255,7 @@ public class ATM {
         //get the account to transfer from
         do {
             System.out.printf("Enter the number (1-%d) of the account to transfer\n"
-                    + " from: ");
+                    + " from: ", theUser.numAccounts());
             toAccount = in.nextInt() - 1;
             if (toAccount < 0 || toAccount >= theUser.numAccounts()) {
                 System.out.println("Invalid account. Please try again.");
