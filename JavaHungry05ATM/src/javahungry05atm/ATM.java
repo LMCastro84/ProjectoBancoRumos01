@@ -74,7 +74,7 @@ public class ATM {
 
         //user menu
         do {
-            System.out.printf("Welcome %s, what would you like to do?", theUser.getFirstName());
+            System.out.printf("Welcome %s, what would you like to do?\n", theUser.getFirstName());
             System.out.println("1- Account transaction history");
             System.out.println("2- Withdraw");
             System.out.println("3- Deposit");
@@ -107,7 +107,7 @@ public class ATM {
 
         //redisplay menu unless user wants to quit
         if (choice != 5) {
-            ATM.prinUserMenu(theUser, in);
+            ATM.printUserMenu(theUser, in);
         }
     }
 
