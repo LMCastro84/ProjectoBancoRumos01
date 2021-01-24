@@ -206,7 +206,7 @@ public class ATM {
 
         //get the account to transfer from
         do {
-            System.out.printf("Enter the number (1-%d) of the account to transfer\n"
+            System.out.printf("Enter the number (1-%d) of the account to withdraw\n"
                     + " from: ", theUser.numAccounts());
             fromAccount = in.nextInt() - 1;
             if (fromAccount < 0 || fromAccount >= theUser.numAccounts()) {
