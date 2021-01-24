@@ -103,6 +103,10 @@ public class ATM {
             case 4:
                 ATM.transferFunds(theUser, in);
                 break;
+            case 5:
+                //gobble up rest of previous input
+                in.nextLine();
+                break;
         }
 
         //redisplay menu unless user wants to quit
