@@ -135,6 +135,12 @@ public class ATM {
         theUser.printAccountTransHistory(theAccount);
     }
 
+    /**
+     * Process transferring funds from one account to another
+     *
+     * @param theUser the logged-in User object
+     * @param in yhe Scanner object used for user input
+     */
     public static void transferFunds(User theUser, Scanner in) {
         //initialize
         int fromAccount;
