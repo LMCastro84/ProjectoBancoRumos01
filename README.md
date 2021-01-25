@@ -19,6 +19,8 @@ At this level, bank cards with the respective customer associations and bank acc
 CUSTOMERS:
 The system should store information about the bank's customers, namely:
   Customer number (internal to the bank); Name; Telephone; Email; Profession; Accounts;
+Customers can be of two types: Normal and VIP. A normal customer (when created in the system) automatically has a current account associated with it as well as a debit card. Each customer can only have one checking account, but can have more accounts of other types (described below) and more cards (debit or credit).
+A VIP customer, in addition to the characteristics assigned to regular customers, also has an associated account manager and may have investment-type accounts (exclusive for this type of customer).
 
 CARDS:
 Customers can be of two types: normal and VIP. A normal customer (when created in the system) automatically has a current account associated with it as well as a debit card. Each customer can only have one checking account, but can have more accounts of other types (described below) and more cards (debit or credit).
